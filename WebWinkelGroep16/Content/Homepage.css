@@ -1,0 +1,57 @@
+﻿body {
+    background: aliceblue;
+    margin:0 auto;
+    width: auto;
+    
+}
+
+#header{
+    background: white;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    height:100px;
+    width: auto;
+    border: solid black 1px;
+
+    text-align: left;
+}
+
+#top{
+    background: white;
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    right: 20px;
+    height: 40px;
+    border: solid black 1px;
+}
+#left{
+    background: white;
+    position: absolute;
+    top: 170px;
+    left: 20px;
+    bottom: 70px;
+    width: 200px;
+    border: solid black 1px;
+}
+
+#mid{
+    position: absolute;
+    top: 170px;
+    left: 230px;
+    right: 20px;
+    bottom: 70px;
+    
+}
+
+#footer{
+    background: white;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    height: 50px;
+    border: solid black 1px;
+}
