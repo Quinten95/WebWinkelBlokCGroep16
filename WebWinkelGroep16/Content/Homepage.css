@@ -42,13 +42,21 @@
     border: solid black 1px;
 }
 
-#mid{
+#product1{
     position: absolute;
     top: 170px;
     left: 230px;
-    right: 20px;
-    bottom: 70px;
-    
+    right: 850px;
+    bottom: 400px;
+    border: solid black 1px;
+}
+#product2{
+    position: absolute;
+    top: 170px;
+    left: 55%;
+    right: 1%;
+    bottom: 400px;
+    border: solid black 1px;
 }
 
 #footer{
