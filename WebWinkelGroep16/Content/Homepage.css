@@ -61,8 +61,5 @@
     border: solid black 1px;
 }
 
-a:link {
-    color: darkgreen;
-}
-a:visited {color: darkgreen;
-}
+a:link {color: darkgreen;}
+a:visited {color: darkgreen;}
