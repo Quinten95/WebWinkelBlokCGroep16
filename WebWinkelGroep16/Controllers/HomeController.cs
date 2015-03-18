@@ -68,6 +68,7 @@ namespace WebWinkelGroep16.Controllers
             if (email != null)
             {
                 SendMail();
+                return View("bestellingGeslaagd");
             }
             return View();
         }
@@ -75,23 +76,24 @@ namespace WebWinkelGroep16.Controllers
         public void SendMail()
         {
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress(this.Email);
-            msg.To.Add(new MailAddress("quinten103@gmail.com"));
+            msg.From = new MailAddress("suikervrijedrankjes.nl@gmail.com");
+            msg.To.Add(new MailAddress("suikervrijedrankjes.nl@gmail.com"));
             msg.Subject = "Nieuwe bestelling";
             msg.Body = this.Voornaam + "\n" + this.Achternaam + "\n" + this.Adres + "\n" + this.Postcode + "\n" + this.Telefoon + "\n" + this.Email +
                 "\nAantal: " + this.AantalProducten.ToString();
             msg.IsBodyHtml = true;
-            
+
             String adres = "suikervrijedrankjes.nl@gmail.com";
-            String password = "123456Suikervrij";
+            String password = "12345Suikervrij";
             
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             
             NetworkCredential loginInfo = new NetworkCredential(adres, password);
+
             
-           
             smtpClient.EnableSsl = true;
-            smtpClient.UseDefaultCredentials = true;
+            smtpClient.UseDefaultCredentials = true ;
+
             smtpClient.Credentials = loginInfo;
             
             smtpClient.Send(msg); 
