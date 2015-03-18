@@ -36,7 +36,23 @@
         </div>
 
         <div id="bestelFormulier">
-            @Model.ToString()
+            <h1>Voer uw gegevens in:</h1>
+            <form name="input" action="/home/bestelFormulierIjsthee" method="post">
+                Voornaam: <br />
+                <input type="text" name="voornaam" /><br />
+                Achternaam: <br />
+                <input type="text" name="achternaam" /><br />
+                Adres: <br />
+                <input type="text" name="adres" /><br />
+                Postcode: <br />
+                <input type="text" name="postcode" /><br />
+                Telefoon nr: <br />
+                <input type="text" name="telefoon" /><br />
+                E-mail:<br />
+                <input type="text" name="email" /><br />
+                <br />
+                <input type="submit" value="Bestel" /><br />
+            </form>
 
         </div>
 
