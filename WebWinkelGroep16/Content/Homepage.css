@@ -116,3 +116,7 @@ p{
     bottom: 70px;
     //border: solid black 1px;
 }
+
+#bestelKnop{
+    float: right;
+}
