@@ -228,6 +228,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\bestelFormulierIjsthee.cshtml" />
     <Content Include="Views\Home\bestellingGeslaagd.cshtml" />
+    <Content Include="Views\Home\BestelFormulierVruchtensap.cshtml" />
+    <Content Include="Views\Home\BestelFormulierTomatensap.cshtml" />
+    <Content Include="Views\Home\BestelFormulierDiksap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

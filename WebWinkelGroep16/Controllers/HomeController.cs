@@ -36,23 +36,43 @@ namespace WebWinkelGroep16.Controllers
             
         }
         
-        public ActionResult Diksap()
+        public ActionResult Diksap(int? aantalProducten)
         {
-            return View();
-        }
-        
-        public ActionResult Vruchtensap()
-        {
-            return View();
-        }
-
-        public ActionResult Tomatensap()
-        {
+            if (aantalProducten.HasValue)
+            {
+                this.AantalProducten = aantalProducten.Value;
+                return View("bestelFormulierIjsthee");
+            }
             return View();
         }
 
-        public ActionResult OverOns()
+        public ActionResult Vruchtensap(int? aantalProducten)
         {
+            if (aantalProducten.HasValue)
+            {
+                this.AantalProducten = aantalProducten.Value;
+                return View("bestelFormulierIjsthee");
+            }
+            return View();
+        }
+
+        public ActionResult Tomatensap(int? aantalProducten)
+        {
+            if (aantalProducten.HasValue)
+            {
+                this.AantalProducten = aantalProducten.Value;
+                return View("bestelFormulierIjsthee");
+            }
+            return View();
+        }
+
+        public ActionResult OverOns(int? aantalProducten)
+        {
+            if (aantalProducten.HasValue)
+            {
+                this.AantalProducten = aantalProducten.Value;
+                return View("bestelFormulierIjsthee");
+            }
             return View();
         }
    
@@ -72,9 +92,59 @@ namespace WebWinkelGroep16.Controllers
             }
             return View();
         }
+        public ActionResult BestelFormulierVruchtensap(String voornaam, String achternaam, String adres, String postcode, String telefoon, String email)
+        {
+            this.Voornaam = voornaam;
+            this.Achternaam = achternaam;
+            this.Adres = adres;
+            this.Postcode = postcode;
+            this.Telefoon = telefoon;
+            this.Email = email;
+            if (email != null)
+            {
+                SendMail();
+                return View("bestellingGeslaagd");
+            }
+            return View();
+        }
+        public ActionResult BestelFormulierTomatensap(String voornaam, String achternaam, String adres, String postcode, String telefoon, String email)
+        {
+            this.Voornaam = voornaam;
+            this.Achternaam = achternaam;
+            this.Adres = adres;
+            this.Postcode = postcode;
+            this.Telefoon = telefoon;
+            this.Email = email;
+            if (email != null)
+            {
+                SendMail();
+                return View("bestellingGeslaagd");
+            }
+            return View();
+        }
+        public ActionResult BestelFormulierDiksap(String voornaam, String achternaam, String adres, String postcode, String telefoon, String email)
+        {
+            this.Voornaam = voornaam;
+            this.Achternaam = achternaam;
+            this.Adres = adres;
+            this.Postcode = postcode;
+            this.Telefoon = telefoon;
+            this.Email = email;
+            if (email != null)
+            {
+                SendMail();
+                return View("bestellingGeslaagd");
+            }
+            return View();
+        }
 
         public void SendMail()
         {
+            try
+            {
+            String adres = "suikervrijedrankjes.nl@gmail.com";
+            String password = "12345Suikervrij";
+
             MailMessage msg = new MailMessage();
             msg.From = new MailAddress("suikervrijedrankjes.nl@gmail.com");
             msg.To.Add(new MailAddress("suikervrijedrankjes.nl@gmail.com"));
@@ -83,20 +153,22 @@ namespace WebWinkelGroep16.Controllers
                 "\nAantal: " + this.AantalProducten.ToString();
             msg.IsBodyHtml = true;
 
-            String adres = "suikervrijedrankjes.nl@gmail.com";
-            String password = "12345Suikervrij";
             
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 465);
             
             NetworkCredential loginInfo = new NetworkCredential(adres, password);
 
             
             smtpClient.EnableSsl = true;
-            smtpClient.UseDefaultCredentials = true ;
-
-            smtpClient.Credentials = loginInfo;
             
-            smtpClient.Send(msg); 
+                smtpClient.Send(msg);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.ReadKey();
+            }
         }
     }
 }
