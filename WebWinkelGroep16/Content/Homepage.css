@@ -54,7 +54,6 @@
     left: 230px;
     right: 540px;
     bottom: 420px;
-    border: solid black 1px;
 }
 #product2{
     position: absolute;
@@ -62,7 +61,6 @@
     left: 735px;
     right: 20px;
     bottom: 420px;
-    border: solid black 1px;
 }
 
 #product3{
@@ -71,7 +69,6 @@
     left: 230px;
     right: 540px;
     bottom: 70px;
-    border: solid black 1px;
 }
 
 #product4{
@@ -80,7 +77,6 @@
     left: 735px;
     right: 20px;
     bottom: 70px;
-    border: solid black 1px;
 }
 
 #footer{
@@ -95,3 +91,14 @@
 
 a:link {color: darkgreen;}
 a:visited {color: darkgreen;}
+
+#productFoto{
+    padding-top:15px;
+    float: left;
+}
+p{
+    text-align: left;
+    vertical-align: top;
+    font-size: 17px;
+    font-family: Calibri;
+}
