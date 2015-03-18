@@ -18,8 +18,9 @@ namespace WebWinkelGroep16.Controllers
         public String Adres { get; set; }
         public String Postcode { get; set; }
         public String Telefoon { get; set; }
-        public String Email { get; set; } 
-
+        public String Email { get; set; }
+        public String ProductNaam { get; set; }
+        
         public ActionResult Index()
         {
             return View();
@@ -27,10 +28,11 @@ namespace WebWinkelGroep16.Controllers
         
         public ActionResult Ijsthee(int? aantalProducten)
         {
+            
             if (aantalProducten.HasValue)
-            {
-                this.AantalProducten = aantalProducten.Value;
-                return View("bestelFormulierIjsthee");
+            {                
+                this.AantalProducten = aantalProducten.Value;                
+                return View("bestelFormulierIjsthee", this.AantalProducten);
             }
             return View();
             
@@ -38,11 +40,14 @@ namespace WebWinkelGroep16.Controllers
         
         public ActionResult Diksap(int? aantalProducten)
         {
+            
+               
             if (aantalProducten.HasValue)
             {
                 this.AantalProducten = aantalProducten.Value;
-                return View("bestelFormulierIjsthee");
+                return View("bestelFormulierDiksap");
             }
+            
             return View();
         }
 
@@ -50,8 +55,8 @@ namespace WebWinkelGroep16.Controllers
         {
             if (aantalProducten.HasValue)
             {
-                this.AantalProducten = aantalProducten.Value;
-                return View("bestelFormulierIjsthee");
+                this.AantalProducten = aantalProducten.Value;                
+                return View("bestelFormulierVruchtensap");
             }
             return View();
         }
@@ -60,19 +65,14 @@ namespace WebWinkelGroep16.Controllers
         {
             if (aantalProducten.HasValue)
             {
-                this.AantalProducten = aantalProducten.Value;
-                return View("bestelFormulierIjsthee");
+                this.AantalProducten = aantalProducten.Value;                
+                return View("bestelFormulierTomatensap");
             }
             return View();
         }
 
-        public ActionResult OverOns(int? aantalProducten)
+        public ActionResult OverOns()
         {
-            if (aantalProducten.HasValue)
-            {
-                this.AantalProducten = aantalProducten.Value;
-                return View("bestelFormulierIjsthee");
-            }
             return View();
         }
    
@@ -87,6 +87,7 @@ namespace WebWinkelGroep16.Controllers
             this.Email = email;
             if (email != null)
             {
+                ProductNaam = "IJsthee";
                 SendMail();
                 return View("bestellingGeslaagd");
             }
@@ -102,6 +103,7 @@ namespace WebWinkelGroep16.Controllers
             this.Email = email;
             if (email != null)
             {
+                ProductNaam = "Vruchtensap";
                 SendMail();
                 return View("bestellingGeslaagd");
             }
@@ -117,6 +119,7 @@ namespace WebWinkelGroep16.Controllers
             this.Email = email;
             if (email != null)
             {
+                ProductNaam = "Tomatensap";
                 SendMail();
                 return View("bestellingGeslaagd");
             }
@@ -132,6 +135,7 @@ namespace WebWinkelGroep16.Controllers
             this.Email = email;
             if (email != null)
             {
+                ProductNaam = "Diksap";
                 SendMail();
                 return View("bestellingGeslaagd");
             }
@@ -147,8 +151,9 @@ namespace WebWinkelGroep16.Controllers
             msg.From = new MailAddress("suikervrijedrankjes.nl@gmail.com");
             msg.To.Add(new MailAddress("suikervrijedrankjes.nl@gmail.com"));
             msg.Subject = "Nieuwe bestelling";
-            msg.Body = this.Voornaam + "\n" + this.Achternaam + "\n" + this.Adres + "\n" + this.Postcode + "\n" + this.Telefoon + "\n" + this.Email +
-                "\nAantal: " + this.AantalProducten.ToString();
+            msg.Body ="Klantgegevens: naam: " + this.Voornaam + "\nachternaam: " + this.Achternaam + "\nadres: " + this.Adres + 
+                      "\npostcode: " + this.Postcode + "\ntelefoonnr: " + this.Telefoon + "\ne-mail: " + this.Email + "\nProductnaam: " 
+                      + this.ProductNaam + "\nAantal: " + this.AantalProducten;
             msg.IsBodyHtml = true;
 
             
