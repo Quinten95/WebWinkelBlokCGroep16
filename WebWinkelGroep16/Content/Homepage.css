@@ -118,6 +118,16 @@ p{
     font-family: Calibri;
 }
 
+#bestelFormulier{
+    position: absolute;
+    top: 170px;
+    left: 210px;
+    right: 20px;
+    bottom: 70px;
+    font-size: 17px;
+    font-family: Calibri;
+}
+
 #bestelKnop{
     float: right;
 }

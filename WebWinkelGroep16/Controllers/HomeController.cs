@@ -10,33 +10,64 @@ namespace WebWinkelGroep16.Controllers
     {
         //
         // GET: /Home/
-
+        public int Aantal { get; set; }
         public ActionResult Index()
         {
             return View();
         }
         
-        public ActionResult ijsthee()
+        public ActionResult Ijsthee(int? aantalProducten)
+        {
+            if (aantalProducten == 1)
+            {
+                this.Aantal = 1;
+                return View("bestelFormulier", Aantal);
+            }
+            else if (aantalProducten == 2)
+            {
+                this.Aantal = 2;
+                return View("bestelFormulier", Aantal);
+            }
+            else if (aantalProducten == 3)
+            {
+                this.Aantal = 3;
+                return View("bestelFormulier", Aantal);
+            }
+            else if (aantalProducten == 4)
+            {
+                this.Aantal = 4;
+                return View("bestelFormulier", Aantal);
+            }
+            else if (aantalProducten == 5)
+            {
+                this.Aantal = 5;
+                return View("bestelFormulier", Aantal);
+            }
+            return View();
+            
+        }
+        
+        public ActionResult Diksap()
         {
             return View();
         }
         
-        public ActionResult diksap()
-        {
-            return View();
-        }
-        
-        public ActionResult vruchtensap()
+        public ActionResult Vruchtensap()
         {
             return View();
         }
 
-        public ActionResult tomatensap()
+        public ActionResult Tomatensap()
         {
             return View();
         }
 
-        public ActionResult overOns()
+        public ActionResult OverOns()
+        {
+            return View();
+        }
+
+        public ActionResult BestelFormulier()
         {
             return View();
         }
