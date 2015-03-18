@@ -18,30 +18,10 @@ namespace WebWinkelGroep16.Controllers
         
         public ActionResult Ijsthee(int? aantalProducten)
         {
-            if (aantalProducten == 1)
+            if (aantalProducten.HasValue)
             {
-                this.Aantal = 1;
-                return View("bestelFormulier", Aantal);
-            }
-            else if (aantalProducten == 2)
-            {
-                this.Aantal = 2;
-                return View("bestelFormulier", Aantal);
-            }
-            else if (aantalProducten == 3)
-            {
-                this.Aantal = 3;
-                return View("bestelFormulier", Aantal);
-            }
-            else if (aantalProducten == 4)
-            {
-                this.Aantal = 4;
-                return View("bestelFormulier", Aantal);
-            }
-            else if (aantalProducten == 5)
-            {
-                this.Aantal = 5;
-                return View("bestelFormulier", Aantal);
+                this.Aantal = aantalProducten.Value;
+                return View("bestelFormulierIjsthee", Aantal);
             }
             return View();
             
@@ -63,11 +43,6 @@ namespace WebWinkelGroep16.Controllers
         }
 
         public ActionResult OverOns()
-        {
-            return View();
-        }
-
-        public ActionResult BestelFormulier()
         {
             return View();
         }
