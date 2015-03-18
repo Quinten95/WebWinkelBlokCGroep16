@@ -140,8 +140,6 @@ namespace WebWinkelGroep16.Controllers
 
         public void SendMail()
         {
-            try
-            {
             String adres = "suikervrijedrankjes.nl@gmail.com";
             String password = "12345Suikervrij";
 
@@ -155,20 +153,16 @@ namespace WebWinkelGroep16.Controllers
 
             
             
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 465);
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 25);
             
             NetworkCredential loginInfo = new NetworkCredential(adres, password);
 
             
             smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = true;
+            smtpClient.Credentials = loginInfo;
             
-                smtpClient.Send(msg);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                Console.ReadKey();
-            }
+            smtpClient.Send(msg);
         }
     }
 }
