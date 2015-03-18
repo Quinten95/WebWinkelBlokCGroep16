@@ -106,3 +106,13 @@ p{
     font-size: 17px;
     font-family: Calibri;
 }
+
+
+#productInformatie{
+    position: absolute;
+    top: 170px;
+    left: 210px;
+    right: 20px;
+    bottom: 70px;
+    border: solid black 1px;
+}
