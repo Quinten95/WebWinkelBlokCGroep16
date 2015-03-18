@@ -15,8 +15,30 @@ namespace WebWinkelGroep16.Controllers
         {
             return View();
         }
-
         
+        public ActionResult ijsthee()
+        {
+            return View();
+        }
+        
+        public ActionResult diksap()
+        {
+            return View();
+        }
+        
+        public ActionResult vruchtensap()
+        {
+            return View();
+        }
 
+        public ActionResult tomatensap()
+        {
+            return View();
+        }
+
+        public ActionResult overOns()
+        {
+            return View();
+        }
     }
 }

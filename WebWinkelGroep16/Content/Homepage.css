@@ -44,8 +44,12 @@
     top: 170px;
     left: 20px;
     bottom: 70px;
-    width: 200px;
+    width: 170px;
     border: solid black 1px;
+
+    text-align: center;
+    font-size: 17px;
+    font-family: Calibri;
 }
 
 #product1{
