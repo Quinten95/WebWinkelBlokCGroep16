@@ -36,7 +36,7 @@
         </div>
 
         <div id="productInformatie">
-            <img src="~/content/producten/tomaat.jpg" alt="tomatensap" title="tomatensap" id="productFoto" />
+            <img src="~/content/producten/tomaat.jpg" alt="tomatensap" title="tomatensap" id="productFoto" height="420" width="370"/>
             <p>
                 Deze tomatensap wordt van de beste biologische producten gemaakt.<br />
                 De tomaten komen van de beste plantages en worden onder arbeidsvriendelijke omstandigheden geoogst.<br />
@@ -53,6 +53,15 @@
                 eiwitten: 0 gram <br />
                 zout 0 gram <br />
             </p>
+            <h2>€3,99 Per stuk!</h2>
+            <form id="tomatensapBestelForm" name="tomatensapBestelForm" action="/home/ijsthee" method="post">
+                <input type="image" src="~/content/knop/bestel.png" id="bestelKnop" alt="Submit form" /><br />
+                <br />
+                Aantal:
+                <input type="text" name="aantal" />
+
+            </form>
+
         </div>
 
         <div id="footer">

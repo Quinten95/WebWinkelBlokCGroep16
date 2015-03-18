@@ -114,7 +114,8 @@ p{
     left: 210px;
     right: 20px;
     bottom: 70px;
-    //border: solid black 1px;
+    font-size: 17px;
+    font-family: Calibri;
 }
 
 #bestelKnop{
