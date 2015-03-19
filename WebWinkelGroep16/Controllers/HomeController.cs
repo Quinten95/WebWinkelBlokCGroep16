@@ -20,7 +20,7 @@ namespace WebWinkelGroep16.Controllers
         public String Telefoon { get; set; }
         public String Email { get; set; }
         public String ProductNaam { get; set; }
-        
+
         public ActionResult Index()
         {
             return View();
